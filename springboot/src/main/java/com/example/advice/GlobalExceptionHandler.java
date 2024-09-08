@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(CustomerAlreadyExistsException.class)
     public ResponseEntity<?> handleException(CustomerAlreadyExistsException ex,WebRequest request){
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.CONTINUE.value(),
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.CONFLICT.value(),
                 ex.getMessage(), LocalDateTime.now(),request.getDescription(false));
         return new ResponseEntity<>(errorResponse,HttpStatus.CONFLICT);
     }
