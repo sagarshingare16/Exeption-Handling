@@ -11,7 +11,7 @@ public class TryWithResourcesExample {
                 System.out.print((char) character);
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while reading the file :: "+ e.getMessage());
+            System.out.println("An error occurred while reading the file : "+ e.getMessage());
         }
     }
 }
