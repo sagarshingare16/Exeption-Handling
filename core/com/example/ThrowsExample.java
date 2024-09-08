@@ -10,6 +10,7 @@ public class ThrowsExample {
         }catch (IOException ex){
             System.out.println("An error occurred: " + ex.getMessage());
         }
+        System.out.println("Next statement!");
     }
     public static void readFile(FileReader reader) throws IOException{
         int character;

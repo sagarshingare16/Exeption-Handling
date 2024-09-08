@@ -1,6 +1,6 @@
 package com.example;
 
-public class ValidateAgeException extends RuntimeException{
+public class ValidateAgeException extends Exception{
     public ValidateAgeException(){
         super("Not eligible to vote!");
     }
