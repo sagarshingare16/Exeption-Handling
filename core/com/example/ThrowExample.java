@@ -16,7 +16,7 @@ public class ThrowExample {
             System.out.println(ex.getMessage());
         }
     }
-    /*public static String validateAge(int age) throws ValidateAgeException {
+    /*public static String validateAge(int age) throws ValidateAgeException {   // if we are using custom exception by extending Exception class
         if(age<18){
             throw new ValidateAgeException("You are not eligible to vote!");
         }else {
@@ -26,7 +26,7 @@ public class ThrowExample {
 
     public static String validateAge(int age){
         if(age<18){
-            throw new ValidateAgeRunTimeException();
+            throw new ValidateAgeRunTimeException();   //// if we are using custom exception by extending RuntimeException class
         }else {
             return "Eligible to vote!";
         }

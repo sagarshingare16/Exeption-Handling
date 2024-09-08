@@ -5,9 +5,11 @@ import com.example.exception.NoSuchCustomerExistsException;
 import com.example.model.Customer;
 import com.example.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
@@ -18,18 +20,16 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepository.findById(id).orElseThrow(()->
                 new NoSuchCustomerExistsException("No customer present with "+id));
     }
-
     @Override
     public String addCustomer(Customer customer) {
-        Customer existingCustomer = customerRepository.findById(customer.getId()).orElse(null);
-        if(existingCustomer == null){
+        Optional<Customer> existingCustomer = customerRepository.findById(customer.getId());
+        if(existingCustomer.isPresent()){
+            throw new CustomerAlreadyExistsException("Customer already present!");
+        }else {
             customerRepository.save(customer);
             return "Customer saved successfully!";
-        }else {
-            throw new CustomerAlreadyExistsException("Customer already present!");
         }
     }
-
     @Override
     public String updateCustomer(Customer customer) {
         Customer existingCustomer = customerRepository.findById(customer.getId()).orElse(null);

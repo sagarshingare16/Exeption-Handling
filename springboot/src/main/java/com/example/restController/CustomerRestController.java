@@ -2,11 +2,14 @@ package com.example.restController;
 
 import com.example.model.Customer;
 import com.example.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerRestController {
+
+    @Autowired
     private CustomerService customerService;
 
     @GetMapping("/getCustomer/{id}")

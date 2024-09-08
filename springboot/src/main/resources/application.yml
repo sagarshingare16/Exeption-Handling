@@ -2,7 +2,7 @@ spring:
   application:
     name: "Spring-boot-exception-handling"
   datasource:
-    url: "jdbc:postgresql://localhost:5432/practice"
+    url: "jdbc:postgresql://localhost:5432/practice-db"
     username: "postgres"
     password: "root"
     driver-class-name: "org.postgresql.Driver"

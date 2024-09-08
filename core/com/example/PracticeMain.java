@@ -10,13 +10,13 @@ public class PracticeMain {
             }
         }catch (ArithmeticException ex){
             System.out.println(ex+ " :: " + ex.getMessage());
-            System.out.println("Next statement!");
         }catch (Exception ex){
             System.out.println(ex+ " :: " + ex.getMessage());
             System.out.println("Generic exception!");
         }
+        System.out.println("Next statement!");
     }
     public static int divide(int a, int b){
         return a/b;
-    }
+        }
 }

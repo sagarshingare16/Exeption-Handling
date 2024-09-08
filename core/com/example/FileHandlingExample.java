@@ -16,7 +16,10 @@ public class FileHandlingExample {
             }
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file :: "+ e.getMessage());
-        }finally {
+        } catch (Exception ex){
+            System.out.println("An error occurred in program :: "+ex.getMessage());
+        }
+        finally {
             if(reader != null){
                 try {
                     reader.close();
